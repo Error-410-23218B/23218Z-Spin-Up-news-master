@@ -25,7 +25,7 @@ extern motor RollerMotor;
 extern motor_group DrivetrainLeft;
 extern motor_group DrivetrainRight;
 extern eftl::customDrivetrain CDrivetrain;
-extern pneumatics Pneumatic; 
+extern pneumatics flyPneum; 
 
 
 /**

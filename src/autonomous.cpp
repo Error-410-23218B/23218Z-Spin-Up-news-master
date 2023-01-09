@@ -28,6 +28,11 @@ void blueSSelect() { blueSon = true; }
 
 
 
+void flyp(){
+  flyPneum.open();
+  flyPneum.close();
+}
+
 void autonomous()
 {
   if (redLon)
@@ -153,3 +158,26 @@ void redShort()
   Flywheel();
   t1.stop();
 }
+
+void redLongN(){
+  Roller();
+  CDrivetrain.spinFor(0.25*Tile,reverse);
+  CDrivetrain.turnFor(left,270);
+  CDrivetrain.spinFor(3*Tile,forward);
+  CDrivetrain.turnFor(right,45);
+  CDrivetrain.spinFor(1*Tile,forward);
+  CDrivetrain.turnFor(left,90);
+  CDrivetrain.spinFor(1*Tile,forward);
+
+
+}
+void redShortN(){
+  task t1(intake);
+  CDrivetrain.spinFor(2.25*Tile,forward);
+  CDrivetrain.turnFor(right,45);
+  flyp();
+  CDrivetrain.spinFor(2*Tile,forward);
+  Roller();
+}
+void blueLongN(){}
+void blueShortN(){}

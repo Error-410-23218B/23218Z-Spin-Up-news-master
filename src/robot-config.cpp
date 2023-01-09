@@ -32,7 +32,7 @@ motor DrivetrainRightB = motor(PORT16,ratio18_1,true);
 motor_group DrivetrainLeft = motor_group(DrivetrainLeftA,DrivetrainLeftB);
 motor_group DrivetrainRight = motor_group(DrivetrainRightA,DrivetrainRightB);
 eftl::customDrivetrain CDrivetrain= eftl::customDrivetrain(DrivetrainLeft,DrivetrainRight);
-pneumatics Pneumatic = pneumatics(Brain.ThreeWirePort.A);  
+pneumatics flyPneum = pneumatics(Brain.ThreeWirePort.A);  
 // VEXcode generated functions
 // define variable for remote controller enable/disable
 bool RemoteControlCodeEnabled = true;
