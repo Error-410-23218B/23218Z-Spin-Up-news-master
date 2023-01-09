@@ -1,0 +1,21 @@
+{
+	"extension": {
+		"version": "0.3.0",
+		"json": 1
+	},
+	"project": {
+		"name": "23218Z-Spin-Up",
+		"description": "",
+		"creationDate": "14/12/2022, 17:33:29",
+		"platform": "V5",
+		"language": "cpp",
+		"slot": 1,
+		"sdkVersion": "V5_20220726_10_00_00",
+		"cpp": {
+			"includePath": [
+				"${vex_sdkIncludes}",
+				"${workspaceFolder}/include"
+			]
+		}
+	}
+}

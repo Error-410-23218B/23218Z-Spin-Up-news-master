@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "chrono": "cpp",
+        "ratio": "cpp",
+        "type_traits": "cpp",
+        "cstdint": "cpp",
+        "ctime": "cpp",
+        "limits": "cpp",
+        "cstdlib": "cpp",
+        "iostream": "cpp"
+    },
+    "cmake.sourceDirectory": "${workspaceFolder}/OkapiCppConnector",
+    "C_Cpp.errorSquiggles": "enabled"
+}
