@@ -29,3 +29,7 @@ while(Power != isetpoint){
 }
 }
 
+double eftl::PIDController::tune(){
+  while(!Controller1.but)
+}
+

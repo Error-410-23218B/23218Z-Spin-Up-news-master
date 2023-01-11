@@ -160,24 +160,58 @@ void redShort()
 }
 
 void redLongN(){
+  task intake(intake);
+  CDrivetrain.spinFor(10,reverse);
   Roller();
-  CDrivetrain.spinFor(0.25*Tile,reverse);
-  CDrivetrain.turnFor(left,270);
-  CDrivetrain.spinFor(3*Tile,forward);
-  CDrivetrain.turnFor(right,45);
-  CDrivetrain.spinFor(1*Tile,forward);
+  CDrivetrain.spinFor(10,forward);  
+  CDrivetrain.turnFor(right,225);
+  CDrivetrain.spinFor(2*Tile,forward);
+  CDrivetrain.spinFor(0.45*Tile,reverse);
   CDrivetrain.turnFor(left,90);
+  flyp();
+  CDrivetrain.turnFor(right,135);
+  CDrivetrain.spinFor(0.25*Tile,forward);
+  CDrivetrain.turnFor(left,135);  
   CDrivetrain.spinFor(1*Tile,forward);
+  
 
 
 }
 void redShortN(){
   task t1(intake);
-  CDrivetrain.spinFor(2.25*Tile,forward);
-  CDrivetrain.turnFor(right,45);
-  flyp();
   CDrivetrain.spinFor(2*Tile,forward);
+  CDrivetrain.turnFor(left,125);
+  flyp();
+  CDrivetrain.turnFor(right,180);
+  CDrivetrain.spinFor(2.5*Tile,forward);
+  CDrivetrain.spinFor(10,forward);
   Roller();
+  CDrivetrain.spinFor(10,reverse);
 }
-void blueLongN(){}
-void blueShortN(){}
+void blueLongN(){
+  task intake(intake);
+  CDrivetrain.spinFor(10,reverse);
+  Roller();
+  CDrivetrain.spinFor(10,forward);  
+  CDrivetrain.turnFor(right,225);
+  CDrivetrain.spinFor(2*Tile,forward);
+  CDrivetrain.spinFor(0.45*Tile,reverse);
+  CDrivetrain.turnFor(left,90);
+  flyp();
+  CDrivetrain.turnFor(right,135);
+  CDrivetrain.spinFor(0.25*Tile,forward);
+  CDrivetrain.turnFor(left,135);  
+  CDrivetrain.spinFor(1*Tile,forward);
+}
+void blueShortN(){
+  task t1(intake);
+  CDrivetrain.spinFor(2*Tile,forward);
+  CDrivetrain.turnFor(left,125);
+  flyp();
+  CDrivetrain.turnFor(right,180);
+  CDrivetrain.spinFor(2.5*Tile,forward);
+  CDrivetrain.spinFor(10,forward);
+  Roller();
+  CDrivetrain.spinFor(10,reverse);
+
+}
