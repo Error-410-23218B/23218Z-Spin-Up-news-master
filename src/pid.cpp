@@ -7,10 +7,10 @@
 
 eftl::PIDController::PIDController(double ikP, double ikI, double ikD, double ikF)
 {
-  kP = ikP;
-  kI = ikI;
-  kD = ikD;
-  kF = ikF;
+  kP = pkP;
+  kI = pkI;
+  kD = pkD;
+  kF = pkF;
 };
 
 double eftl::PIDController::step(double isetpoint, double process_variable)
@@ -30,6 +30,20 @@ while(Power != isetpoint){
 }
 
 double eftl::PIDController::tune(){
-  while(!Controller1.but)
+  while(!Controller1.ButtonA.pressing()){
+    this->pkP += 0.05;
+    this->pkI += 0.05;
+    this->pkD += 0.05;
+    Brain.Screen.print(pkP);
+    Brain.Screen.print(pkI);
+    Brain.Screen.print(pkD);
+  
+  }
+
+  
+
 }
 
+void eftl::PIDController::tune_test(){
+  
+}
