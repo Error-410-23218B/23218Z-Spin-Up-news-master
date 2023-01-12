@@ -8,6 +8,7 @@
 
 
 using namespace vex;
+const double pi = 3.1415926535;
 
 eftl::PIDController LeftDrive(0.0,0.0,0.0,0.0);
 eftl::PIDController RightDrive(0.0,0.0,0.0,0.0);
@@ -17,8 +18,11 @@ eftl::PIDController DrivePos(0.0,0.0,0.0,0.0);
 
 
 eftl::customDrivetrain::customDrivetrain(vex::motor_group &l, vex::motor_group &r, double wheelTravel = 320, double trackWidth = 320, double wheelBase = 130, vex::distanceUnits unit = vex::distanceUnits::mm, double externalGearRatio = 1.0)
-{
+{   
+    deg_mm = (pi*wheelBase)/360;
+    trn_mm = (trackWidth*pi)/180;
     task a1(velocTR);
+    
 };
 
 
@@ -62,8 +66,8 @@ void eftl::customDrivetrain::spin(){
 }
 
 void eftl::customDrivetrain::spinFor(double spinPos,directionType direction){
-    DrivetrainLeft.spinFor(direction,DrivePos.step(spinPos * deg_mm,DrivetrainLeft.rotation(degrees)),rotationUnits::deg);
-    DrivetrainRight.spinFor(direction,DrivePos.step(spinPos * deg_mm,DrivetrainLeft.rotation(degrees)),rotationUnits::deg);
+    DrivetrainLeft.spinFor(direction,DrivePos.step(spinPos/deg_mm,DrivetrainLeft.rotation(degrees)),rotationUnits::deg);
+    DrivetrainRight.spinFor(direction,DrivePos.step(spinPos/deg_mm,DrivetrainLeft.rotation(degrees)),rotationUnits::deg);
 }
 
 
@@ -73,11 +77,12 @@ void eftl::customDrivetrain::stop(){
 }                                               
 
 void eftl::customDrivetrain::turnFor(turnType turnVar,double turnAmount){
- if(turnVar == turnType::left)   DrivetrainLeft.spinFor(forward,LeftDrive.step(DrivetrainLeft.position(degrees)+turnAmount,DrivetrainLeft.position(degrees)),degrees); DrivetrainRight.spinFor(reverse,(RightDrive.step(DrivetrainRight.position(degrees)+turnAmount,DrivetrainRight.position(degrees))),degrees);
- if(turnVar == turnType::right)   DrivetrainLeft.spinFor(reverse,LeftDrive.step(DrivetrainLeft.position(degrees)+turnAmount,DrivetrainLeft.position(degrees)),degrees); DrivetrainRight.spinFor(forward,(RightDrive.step(DrivetrainRight.position(degrees)+turnAmount,DrivetrainRight.position(degrees))),degrees);  
+ if(turnVar == turnType::left)   DrivetrainLeft.spinFor(forward,LeftDrive.step((DrivetrainLeft.position(degrees)+turnAmount)/trn_mm,DrivetrainLeft.position(degrees)),degrees); DrivetrainRight.spinFor(reverse,(RightDrive.step((DrivetrainRight.position(degrees)+turnAmount/trn_mm),DrivetrainRight.position(degrees))),degrees);
+ if(turnVar == turnType::right)   DrivetrainLeft.spinFor(reverse,LeftDrive.step((DrivetrainLeft.position(degrees)+turnAmount/trn_mm),DrivetrainLeft.position(degrees)),degrees); DrivetrainRight.spinFor(forward,(RightDrive.step((DrivetrainRight.position(degrees)+turnAmount/trn_mm),DrivetrainRight.position(degrees))),degrees);  
 } 
 
 
 
 
 
+ 

@@ -8,7 +8,8 @@ class customDrivetrain{
        static double Velocity;
        static double VelocL;
        static double VelocR;
-       const double deg_mm = 1.0;
+       double deg_mm;
+       double trn_mm;
        
     
     customDrivetrain::customDrivetrain(vex::motor_group &l, vex::motor_group &r, double wheelTravel=320,double trackWidth=320, double wheelBase=130,vex::distanceUnits unit=vex::distanceUnits::mm,double externalGearRatio=1.0);

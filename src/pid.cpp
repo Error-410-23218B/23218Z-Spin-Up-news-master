@@ -17,7 +17,7 @@ double eftl::PIDController::step(double isetpoint, double process_variable)
 {
 while(Power != isetpoint){
   double error = isetpoint - process_variable;
-  integral += error;
+  integral += error; 
   if (error == 0 || error > isetpoint)
     integral = 0;
   if (0 < error && error < 10000)
