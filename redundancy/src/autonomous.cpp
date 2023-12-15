@@ -48,7 +48,6 @@ void turnMethod(double turnDegrees, turnType test)
   Drivetrain.turnFor(90);
 }
 */
-/*
 void driveMethod(double driveAmount, double driveVelocity)
 {
   double currentSpeed = Drivetrain.velocity(percentUnits::pct);
